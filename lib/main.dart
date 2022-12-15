@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_flutter/pages/home_page.dart';
+import 'package:pokemon_flutter/pages/pokemon.dart';
+import 'package:pokemon_flutter/theme/theme.dart';
+
 
 void main() {
   runApp(const FlutterApp());
@@ -11,11 +14,10 @@ class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pokemons',
-      initialRoute: '/',
-      routes:{
-        '/':(context) => const HomePage()
-      }
-    );
+        debugShowCheckedModeBanner: false,
+        theme: theme,
+        title: 'Pokemons',
+        initialRoute: '/',
+        routes: {'/': (context) => const HomePage(), '/pokemon':(context) => const Pokemon() });
   }
 }
